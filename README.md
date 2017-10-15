@@ -8,8 +8,6 @@ test draw model (.obj + .mtl)
 Screenshot
 ----------
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/uFN7cQmDUcA" frameborder="0" allowfullscreen></iframe>
-
 [pi3d demo STG modoki on Windows10 x64 - YouTube](https://youtu.be/uFN7cQmDUcA)
 
 
