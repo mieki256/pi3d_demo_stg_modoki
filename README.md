@@ -5,6 +5,9 @@ pi3d demo stg modoki
 
 test draw model (.obj + .mtl)
 
+    python draw_model_stg_modoki.py
+
+
 Screenshot
 ----------
 
