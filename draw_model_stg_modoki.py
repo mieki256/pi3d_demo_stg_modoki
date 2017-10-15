@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- mode: python; Encoding: utf-8; coding: utf-8 -*-
-# Last updated: <2017/10/16 05:17:13 +0900>
+# Last updated: <2017/10/16 06:09:50 +0900>
 u"""
 pi3d draw model(obj + mtl) sample.
 
@@ -25,7 +25,10 @@ import pi3d
 import pygame
 
 
-MY_FPS = 60
+MY_FPS = 30
+BG_MODLE_PATH = "models/tiny_city02.obj"
+PLAYER_IMG_PATH = "imgs/airplane_01_64x64.png"
+BULLET_IMG_PATH = "imgs/fire_01_64x64.png"
 
 
 class KeyboardStatus(object):
@@ -159,9 +162,10 @@ camera_bg = pi3d.Camera(at=(0, 0, 0), eye=(0.0, 16.0, -6.0))
 camera_flat = pi3d.Camera(is_3d=True)
 
 # 背景モデルデータを読み込み
-model_path = "tiny_city02.obj"
-my_model0 = pi3d.Model(camera=camera_bg, light=light, file_string=model_path)
-my_model1 = pi3d.Model(camera=camera_bg, light=light, file_string=model_path)
+my_model0 = pi3d.Model(camera=camera_bg, light=light,
+                       file_string=BG_MODLE_PATH)
+my_model1 = pi3d.Model(camera=camera_bg, light=light,
+                       file_string=BG_MODLE_PATH)
 
 # 背景モデルのシェーダを設定
 my_model0.set_shader(shader)
@@ -178,13 +182,13 @@ my_model1.position(bg_x, bg_y, bg_z - 20.0)
 
 # 手前に重ねるスプライト(自機)を生成
 x, y, z = 0.0, 0.0, 1.0
-tex = pi3d.Texture("airplane_01_64x64.png")
+tex = pi3d.Texture(PLAYER_IMG_PATH)
 spr = pi3d.ImageSprite(tex, shader_flat, w=0.1, h=0.1, camera=camera_flat)
 display.add_sprites(spr)
 spr.position(x, y, z)
 
 # 手前に重ねるスプライト(弾)を生成
-bullet_tex = pi3d.Texture("fire_01_64x64.png")
+bullet_tex = pi3d.Texture(BULLET_IMG_PATH)
 bullet_sprs = []
 for i in range(8):
     bspr = pi3d.ImageSprite(bullet_tex, shader_flat,

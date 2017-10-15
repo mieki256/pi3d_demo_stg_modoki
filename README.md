@@ -3,13 +3,27 @@
 pi3d demo stg modoki
 ====================
 
-draw model (.obj + .mtl)
+test draw model (.obj + .mtl)
+
+Screenshot
+----------
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uFN7cQmDUcA" frameborder="0" allowfullscreen></iframe>
+
+[pi3d demo STG modoki on Windows10 x64 - YouTube](https://youtu.be/uFN7cQmDUcA)
+
+
+Key
+---
 
 - WASD / Cursor key : move
 - ESC : exit
 
-- Windows10 x64 + Python 2.7.12 32bit + pi3d 2.21
+Execution check environment
+---------------------------
+
 - Raspberry Pi Zero W + raspbian stretch + pi3d 2.21
+- Windows10 x64 + Python 2.7.12 32bit + pi3d 2.21
 
 Author
 ------
@@ -21,4 +35,3 @@ License
 -------
 
 CC0
-
